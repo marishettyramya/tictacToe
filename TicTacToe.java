@@ -33,8 +33,8 @@ public class TicTacToe extends JFrame implements ItemListener, ActionListener{
 	super("Noughts and Crosses");
 
 	CheckboxGroup cbg=new CheckboxGroup();
-	computerCheckbox=new Checkbox("vs computer",cbg,false);
-	friendCheckbox=new Checkbox("vs friend",cbg,false);
+	computerCheckbox=new Checkbox("Computer",cbg,false);
+	friendCheckbox=new Checkbox("Human",cbg,false);
 	computerCheckbox.setBounds(120,80,100,40);
 	friendCheckbox.setBounds(120,150,100,40);
 	add(computerCheckbox); add(friendCheckbox);
@@ -124,7 +124,7 @@ public class TicTacToe extends JFrame implements ItemListener, ActionListener{
 					b[(a[i][3]-1)].setIcon(crossIcon1);
 					JOptionPane.showMessageDialog(TicTacToe.this,"!!!YOU won!!! click reset");			 break;
 				}
-				else if(icon1==oIcon){ 
+				else if(icon1==oIcon){
 					b[(a[i][1]-1)].setIcon(oIcon1);
 					b[(a[i][2]-1)].setIcon(oIcon1);
 					b[(a[i][3]-1)].setIcon(oIcon1); 
@@ -169,7 +169,7 @@ public class TicTacToe extends JFrame implements ItemListener, ActionListener{
 		            else{ yesnull=a[i][j]; }
 		        }                                                                         //eof for 2
 		      if(count==2){                                                        //if 2
-		         b[yesnull-1].setIcon(oIcon1); 
+		         b[yesnull-1].setIcon(oIcon); 
 		         this.check(yesnull); set=false;break;
 		         }                                                                     //eof if 2
 		      }                                                                     //eof if 1
@@ -207,7 +207,7 @@ public class TicTacToe extends JFrame implements ItemListener, ActionListener{
 		b[i].addActionListener(this);
 		}//eof for
 
-		reset=new JButton("RESET");
+		reset=new JButton("New Game");
 		reset.setBounds(100,350,100,50);
 		add(reset);
 		reset.addActionListener(this);
